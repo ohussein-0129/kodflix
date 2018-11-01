@@ -27,6 +27,15 @@
   to { transform: rotate(360deg); }
 }
 
-.App .movie-image-1{
-  width: 100%;
+.App .movies-table{
+  margin-left: 330px;
+}
+
+.App .movies-table tr{
+  display: flex;
+}
+
+.App .movies-table img{
+  height: 300px;
+  width: 250px;
 }
