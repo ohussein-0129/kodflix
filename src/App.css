@@ -27,7 +27,45 @@
   to { transform: rotate(360deg); }
 }
 
+.row .column{
+  height: 133vw;
+}
+
+.row .column img{
+  width: 100%;
+}
+
 .row .column .title{
+  position: relative;
+  bottom: 75vw;
+  color: aqua;
+  cursor: default;
+  font-size: 10vw;
+}
+
+@media(min-width: 506px){
+  .row{
+    display: flex;
+    height: 43.7vw;
+    overflow: hidden;
+  }
+  .row .column{
+    /* flex: 1; */
+  }
+
+  .row .column .title{
+    font-size: unset;
+    bottom: 23vw;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+
+
+/*********** add title *************/
+/* .row .column .title{
   position: relative;
   bottom: 25vw;
   color: aquamarine;
@@ -48,9 +86,11 @@
 
 img {
   max-width: 100%;
-}
+} */
 
 
+
+/************    table version   ***********************/
 
 /* .App .movies-table{
   margin-left: 330px;
