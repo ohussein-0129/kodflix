@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import BluePlanet from './tv-movie-logos/blue_planet.jpg';
 import PrisonBreak from './tv-movie-logos/prison_break.jpg';
-import OldMovie from './tv-movie-logos/old_movie.jpg'
+import Dexter from './tv-movie-logos/dexter.jpg'
+import HateChris from './tv-movie-logos/eh_chris.jpg'; 
+import Hawaii_5_0 from './tv-movie-logos/hawaii_five-0.jpg';
+import TheWestWing from './tv-movie-logos/the_west_wing.jpg';
+import Arrow from './tv-movie-logos/arrow.jpg';
 
 class App extends Component {
   render() {
@@ -17,22 +20,34 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <table className="movies-table">
-          <tr className="row">
-            <img className="movie" src={BluePlanet} alt="movie1"/>
+        <div className='row'>
+          <div className='column'>
+            <img className="movie" src={HateChris} alt="movie1"/>
+            <div className="title" >Everybody Hates Chris</div>
+          </div>
+          <div className='column'>
             <img className="movie" src={PrisonBreak} alt="movie1"/>
-            <img className="movie" src={OldMovie} alt="movie1"/>
-          </tr>
-          <tr className="row">
-            <img className="movie" src={OldMovie} alt="movie1"/>
-            <img className="movie" src={BluePlanet} alt="movie1"/>
-            <img className="movie" src={PrisonBreak} alt="movie1"/>
-          </tr>
-        </table>
-        {/* <img class="movie" src="https://jonman492000.files.wordpress.com/2014/02/sw_epit5-026.jpg" alt="logo"/>
-        <img className="movie" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Prison_Break_%28miniseries%29.jpg/220px-Prison_Break_%28miniseries%29.jpg" alt="movie1"/>
-        <img className="movie" src="https://m.media-amazon.com/images/M/MV5BNjI1M2ZjMzItZWI4Ny00ZWJlLWI0ZDAtMTJhNDQxOWZjM2M5XkEyXkFqcGdeQXVyMjExMjk0ODk@._V1_.jpg" alt="movie1"/>
-        <img className="movie" src="https://i.ytimg.com/vi/3VjP9-Dw-Rs/maxresdefault.jpg" alt="movie1"/> */}
+            <div className="title">Prison Break</div>
+          </div>
+          <div className='column'>
+            <img className="movie" src={Hawaii_5_0} alt="movie1"/>
+            <div className='title'>Hawaii Five-0</div>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='column'>
+            <img className="movie" src={Dexter} alt="movie1"/>
+            <div className="title">Dexter</div>
+          </div>
+          <div className='column'>
+            <img className="movie" src={TheWestWing} alt="movie1"/>
+            <div className="title">The West Wing</div>
+          </div>
+          <div className='column'>
+            <img className="movie" src={Arrow} alt="movie1"/>
+            <div className="title">Arrow</div>
+          </div>
+        </div>
       </div>
     );
   }
