@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PrisonBreak from './tv-movie-logos/prison_break.jpg';
-import Dexter from './tv-movie-logos/dexter.jpg'
-import HateChris from './tv-movie-logos/eh_chris.jpg'; 
-import Hawaii_5_0 from './tv-movie-logos/hawaii_five-0.jpg';
-import TheWestWing from './tv-movie-logos/the_west_wing.jpg';
-import Arrow from './tv-movie-logos/arrow.jpg';
+import TVShow from './components/tv-shows/TVShow';
+import {Arrow, PrisonBreak, Dexter, HateChris, Hawaii_5_0, TheWestWing} from './ImageLinks';
 
 class App extends Component {
   render() {
@@ -43,7 +39,8 @@ class App extends Component {
             <img className="movie" src={TheWestWing} alt="movie1"/>
             <div className="title">The West Wing</div>
           </div>
-          <div className='column'>
+          {/* <TVShow title={'Arrow'} imagePath={Arrow}/> */}
+          <div className='column' >
             <img className="movie" src={Arrow} alt="movie1"/>
             <div className="title">Arrow</div>
           </div>
