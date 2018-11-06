@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import TVShow from './components/tv-shows/TVShow';
 import {Arrow, PrisonBreak, Dexter, HateChris, Hawaii_5_0, TheWestWing} from './ImageLinks';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 class App extends Component {
   render() {
@@ -15,35 +17,15 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-
         <div className='row'>
-          <div className='column'>
-            <img className="movie" src={HateChris} alt="movie1"/>
-            <div className="title" >Everybody Hates Chris</div>
-          </div>
-          <div className='column'>
-            <img className="movie" src={PrisonBreak} alt="movie1"/>
-            <div className="title">Prison Break</div>
-          </div>
-          <div className='column'>
-            <img className="movie" src={Hawaii_5_0} alt="movie1"/>
-            <div className='title'>Hawaii Five-0</div>
-          </div>
+          <TVShow title={'Everybody Hates Chris'} imagePath={HateChris}/>
+          <TVShow title={'Prison Break'} imagePath={PrisonBreak}/>
+          <TVShow title={'Hawaii Five-0'} imagePath={Hawaii_5_0}/>
         </div>
         <div className='row'>
-          <div className='column'>
-            <img className="movie" src={Dexter} alt="movie1"/>
-            <div className="title">Dexter</div>
-          </div>
-          <div className='column'>
-            <img className="movie" src={TheWestWing} alt="movie1"/>
-            <div className="title">The West Wing</div>
-          </div>
-          {/* <TVShow title={'Arrow'} imagePath={Arrow}/> */}
-          <div className='column' >
-            <img className="movie" src={Arrow} alt="movie1"/>
-            <div className="title">Arrow</div>
-          </div>
+          <TVShow title={'Dexter'} imagePath={Dexter}/>
+          <TVShow title={'The West Wing'} imagePath={TheWestWing}/>
+          <TVShow title={'Arrow'} imagePath={Arrow}/>
         </div>
       </div>
     );
