@@ -41,7 +41,6 @@ a{
     }
 
     .row .column{
-      flex: 1;
     }
   
     .row .column:hover .title{
@@ -71,6 +70,6 @@ a{
     the width of the three images combined*/
   @media (min-width:1460px){
     .row{
-      height: 640px; /*as image cannot increase past this point*/
+      height: 640px;
     }
   }
