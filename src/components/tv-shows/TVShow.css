@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+}
+
 /*mobile devices*/
 @media(max-width: 505px){
     .row .column{
@@ -34,7 +38,10 @@
       display: flex;
       height: 43.7vw;
       overflow: hidden;
-      
+    }
+
+    .row .column{
+      flex: 1;
     }
   
     .row .column:hover .title{
@@ -57,5 +64,13 @@
     .row .column .movie {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  /*screen size bigger than the
+    the width of the three images combined*/
+  @media (min-width:1460px){
+    .row{
+      height: 640px; /*as image cannot increase past this point*/
     }
   }
