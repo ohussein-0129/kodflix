@@ -1,9 +1,16 @@
-a{
+.row a{
   text-decoration: none;
 }
 
 /*mobile devices*/
-@media(max-width: 505px){
+@media screen and (max-width: 400px){
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .row a{
+      flex-basis: 100%;
+    }
     .row .column{
       height: 133vw;
       overflow: hidden;
@@ -31,9 +38,54 @@ a{
       transition: bottom 1s, opactity 0.5s, tansform 1s;
     }
   }
+
+  @media(max-height: 400px){
+    .row a{
+      height: 100vh;
+    }
+  }
+
+  @media(min-width: 401px){
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .row a{
+      flex-basis: 50%;
+    }
+
+    .row .column{     
+      height: 100%;
+      overflow: hidden;
+    }
+  
+    .row .column:hover .title{
+      bottom: 10.8vw;
+      opacity: 0.8;
+      transition: bottom 2s, opacity 2s, transform 2s;
+      font-size: 3vw;
+    }
+  
+    .row .column .title{
+      background: black;
+      position: relative;
+      bottom: 0;
+      height: 11vw;
+      opacity: 0.1;
+      color: white;
+      overflow: hidden;
+      cursor: default;
+    }
+    .row .column .movie {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   
   /*Computer/Laptop*/
-  @media(min-width: 506px){
+  @media (min-width: 800px){
     .row{
       display: flex;
       flex-wrap: wrap;
