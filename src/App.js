@@ -6,12 +6,18 @@ import AllTVShows from './components/tv-shows/AllTVShows';
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      
+    }
+  }
   render() {
     return (
       <Router>
         <div className="App">
               <Switch>
-                <Route exact path='/'  component={AllTVShows}/>
+                <Route exact path='/'  component={AllTVShows} />
                 <Route path='/:movie' component={MovieDetails} />
               </Switch>
         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 
 const movieDetail = (props)=> {
     let url = props.match.url;
+    console.log(url);
     let title = url.split('');
     title[0] = '';
     title = title.map(function(letter, i, arr){
