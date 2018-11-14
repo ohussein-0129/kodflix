@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 import Movies from '../tv-shows/gallery/GalleryGet';
 
 class MovieDetails extends Component{
@@ -14,9 +15,10 @@ class MovieDetails extends Component{
 
     componentWillMount(){
         let title = this.getMovieTitle(this.props.match.params.movie);
+        let movieObject = this.findMovieObject(Movies, title);
         this.setState({
             title: title,
-            movieObject: this.findMovieObject(Movies, title)
+            movieObject: movieObject
         });
         console.log(this.props.match);
     }
@@ -27,6 +29,9 @@ class MovieDetails extends Component{
     }
 
     render(){
+        if(typeof this.state.movieObject==='undefined'){
+            return <Redirect to='/not-found'/>;
+        }
         return(
             <div className="movie-detail">
                 <div>
