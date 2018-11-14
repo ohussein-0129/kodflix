@@ -12,7 +12,7 @@ const tvShowCovers = [
         imagePath: HateChris
     },
     {
-        name: 'Pirson Break',
+        name: 'Prison Break',
         id: 3,
         imagePath: PrisonBreak
     },

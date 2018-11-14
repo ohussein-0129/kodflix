@@ -9,7 +9,8 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      
+      MovieDetails: MovieDetails,
+      AllTVShows: AllTVShows,
     }
   }
   render() {
@@ -17,8 +18,8 @@ class App extends Component {
       <Router>
         <div className="App">
               <Switch>
-                <Route exact path='/'  component={AllTVShows} />
-                <Route path='/:movie' component={MovieDetails} />
+                <Route exact path='/'  component={this.state.AllTVShows} />
+                <Route path='/:movie' component={this.state.MovieDetails} />
               </Switch>
         </div>
       </Router>

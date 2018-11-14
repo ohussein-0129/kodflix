@@ -1,30 +1,56 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Movies from '../tv-shows/gallery/GalleryGet';
 
-const movieDetail = (props)=> {
-    let url = props.match.url;
-    console.log(url);
-    let title = url.split('');
-    title[0] = '';
-    title = title.map(function(letter, i, arr){
-        if(arr[i]==='-'){
-            return ' ';
-        }
+class MovieDetails extends Component{
+    constructor(){
+        super();
+        this.state = {
+            message: 'Hello, this will be the '
+                +'details page for',
+            title: 'Coming soon',
+            movieObject: {/** empty object */}
+        };
+    }
 
-        else if(i===1 || arr[i-1]==='-'){
-            return arr[i].toUpperCase();
-        }
-        else{
-            return arr[i];
-        }
-    });
+    componentWillMount(){
+        let title = this.getMovieTitle(this.props.match.params.movie);
+        this.setState({
+            title: title,
+            movieObject: this.findMovieObject(Movies, title)
+        });
+        console.log(this.props.match);
+    }
 
-    if(title[title.length-1]==='0') title = 'Hawaii Five-0';
+    componentDidMount(){
+        console.log(this.state.movieObject);
+        //do nothing
+    }
 
-    return(
-        <div className="movie-detail">
-            Hello, this will be the details page for {title} {/*each Movie & TV show :)*/}
-        </div>
-    );
-};
+    render(){
+        return(
+            <div className="movie-detail">
+                <div>
+                    <h1>{ this.state.message }  { this.state.title }</h1>
+                    {this.state.movieObject.id}
+                </div>
+                <img src={this.state.movieObject.imagePath}/>
+            </div>
+        );
+    }
 
-export default movieDetail;
+    getMovieTitle(url){
+        let spaced = url.replace(/-/g, ' ').replace(/\s\s/g, '-');
+        let wordsWithCapitals = spaced.split(' ')
+            .map((word)=> {
+                return word[0].toUpperCase() +word.substring(1
+            )});
+        return wordsWithCapitals.join(' ');
+    }
+
+    findMovieObject(arrayOfMoveObjects, movieTitle){
+        return arrayOfMoveObjects.find((movie)=>{
+            return movie.name===movieTitle;
+        });
+    }
+}
+export default MovieDetails;

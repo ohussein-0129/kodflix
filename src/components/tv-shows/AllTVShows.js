@@ -2,7 +2,7 @@ import React from 'react';
 import TVShow from './TVShow';
 import tvShowCovers from './gallery/GalleryGet.js';
 const allShows = (props)=> {
-    
+
     return(
         <span className='tv-show-grid'>
             <div className='row'>
