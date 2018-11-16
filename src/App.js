@@ -7,21 +7,14 @@ import NotFound from './components/not-found/NotFound';
 
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      MovieDetails: MovieDetails,
-      AllTVShows: AllTVShows,
-    }
-  }
   render() {
     return (
       <Router>
         <div className="App">
               <Switch>
-                <Route exact path='/'  component={this.state.AllTVShows} />
+                <Route exact path='/'  component={AllTVShows}/>
                 <Route path='/not-found' component={NotFound}/>
-                <Route path='/:movie' component={this.state.MovieDetails} />
+                <Route path='/:movie' component={MovieDetails}/>
               </Switch>
         </div>
       </Router>

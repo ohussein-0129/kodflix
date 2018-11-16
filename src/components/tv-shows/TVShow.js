@@ -3,10 +3,10 @@ import './TVShow.css';
 import { Link } from "react-router-dom";
 
 const tvShow = (props) => {
-    let link = props.title.toLowerCase().replace(/-/g, '--').replace(/\s/g, '-');
+    let id_link = props.id;
     return(
-        <Link to={link}  name={'abc1237'}>
-            <div className="column">
+        <Link to={id_link} key='123456789'>
+            <div className="column" >
                 <img className="movie" src={props.imagePath} alt="movie1"/>
                 <div className="title">{props.title}</div>
             </div>

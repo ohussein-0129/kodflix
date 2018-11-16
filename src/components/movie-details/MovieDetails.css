@@ -1,3 +1,29 @@
 .movie-detail{
-    color: orange;
+    background-color: orange;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-detail .information{
+    flex-grow: 1;
+    flex-basis: 300px;
+    font-size: 1.2rem;
+}
+
+.movie-detail .cover{
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.movie-detail .cover img{
+    flex-grow: 1;
+}
+
+@media (max-width: 500px){
+    .movie-detail{
+        display: block;
+    }
+    .movie-detail .cover img{
+        width: 100%;
+    }
 }

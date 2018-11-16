@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import Movies from '../tv-shows/gallery/GalleryGet';
+import './MovieDetails.css';
 
 class MovieDetails extends Component{
     constructor(){
@@ -8,54 +9,42 @@ class MovieDetails extends Component{
         this.state = {
             message: 'Hello, this will be the '
                 +'details page for',
-            title: 'Coming soon',
-            movieObject: {/** empty object */}
+            movieObject: {}
         };
     }
 
     componentWillMount(){
-        let title = this.getMovieTitle(this.props.match.params.movie);
-        let movieObject = this.findMovieObject(Movies, title);
+        let movieObject = this.findMovieObject(Movies, this.props.match.params.movie);
         this.setState({
-            title: title,
             movieObject: movieObject
         });
-        console.log(this.props.match);
     }
 
     componentDidMount(){
-        console.log(this.state.movieObject);
         //do nothing
     }
 
     render(){
-        if(typeof this.state.movieObject==='undefined'){
+        if(typeof this.state.movieObject === 'undefined'){
             return <Redirect to='/not-found'/>;
         }
         return(
             <div className="movie-detail">
-                <div>
-                    <h1>{ this.state.message }  { this.state.title }</h1>
-                    {this.state.movieObject.id}
+                <div className='information'>
+                    <h2>{ this.state.message }  { this.state.movieObject.name }</h2>
+                    {this.state.movieObject.information}
                 </div>
-                <img src={this.state.movieObject.imagePath}/>
+                <div className='cover'>
+                    <img src = {this.state.movieObject.imagePath} alt =''/>
+                </div>
             </div>
         );
     }
 
-    getMovieTitle(url){
-        let spaced = url.replace(/-/g, ' ').replace(/\s\s/g, '-');
-        let wordsWithCapitals = spaced.split(' ')
-            .map((word)=> {
-                return word[0].toUpperCase() +word.substring(1
-            )});
-        return wordsWithCapitals.join(' ');
-    }
-
-    findMovieObject(arrayOfMoveObjects, movieTitle){
-        return arrayOfMoveObjects.find((movie)=>{
-            return movie.name===movieTitle;
-        });
+    findMovieObject(arrayOfMoveObjects, passedID){
+        return arrayOfMoveObjects.find((movie)=>(
+            movie.id === passedID
+        ));
     }
 }
 export default MovieDetails;
