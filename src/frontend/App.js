@@ -7,6 +7,16 @@ import NotFound from './components/not-found/NotFound';
 
 
 class App extends Component {
+  componentDidMount(){
+    fetch('/rest/show')
+    .then(function(response) {
+      //response.headers.forEach((v)=> console.log(v));
+      return response.json();
+    })
+    .then(function(myJson) {
+      console.log(myJson);
+    });
+  }
   render() {
     return (
       <Router>
