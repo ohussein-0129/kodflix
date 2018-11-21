@@ -1,4 +1,4 @@
-const tvShows = [
+module.exports.tvShows = [
     {
         name: 'Arrow',
         id: '1',
@@ -30,5 +30,3 @@ const tvShows = [
         information: 'The West Wing is an American serial political drama television series created by Aaron Sorkin that was originally broadcast on NBC from September 22, 1999, to May 14, 2006. The series is set primarily in the West Wing of the White House, where the Oval Office and offices of presidential senior staff are located, during the fictitious Democratic administration of Josiah Bartlet. The West Wing was produced by Warner Bros. Television and featured an ensemble cast, including Martin Sheen, Allison Janney, Rob Lowe, Bradley Whitford and Richard Schiff. For the first four seasons, there were three executive producers: Sorkin (lead writer of almost all of the first four seasons), Thomas Schlamme (primary director), and John Wells.'
     }
 ];
-
-module.exports.tvShows = tvShows;

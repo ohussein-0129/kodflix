@@ -7,6 +7,7 @@ import NotFound from './components/not-found/NotFound';
 
 
 class App extends Component {
+  
   componentDidMount(){
     fetch('/rest/show')
     .then(function(response) {
