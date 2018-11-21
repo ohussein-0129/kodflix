@@ -4,7 +4,7 @@ const app = express();
 const tvShows = require("./ShowsList");
 const path = require('path');
 //const port = process.env.PORT || 5000;
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.get('/rest/show', (req, res)=>{
     res.type('json');
