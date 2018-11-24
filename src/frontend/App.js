@@ -10,12 +10,18 @@ class App extends Component {
   
   componentDidMount(){
     fetch('/rest/show')
-    .then(function(response) {
-      return response.json();
+    .then((res)=> {
+      return res.json();
     })
-    .then(function(myJson) {
+    .then((myJson)=> {
       console.log(myJson);
     });
+
+    fetch('images/arrow')
+      .then((res)=> {
+        return res;
+      })
+
   }
   render() {
     return (

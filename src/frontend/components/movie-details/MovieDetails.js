@@ -14,10 +14,19 @@ class MovieDetails extends Component{
     }
 
     componentWillMount(){
+        //frontend
         let movieObject = this.findMovieObject(Movies, this.props.match.params.movie);
         this.setState({
             movieObject: movieObject
         });
+        //backend
+        // let movieObj  = fetch('/rest/show')
+        //     .then((res)=> {
+
+        //     })
+        //     .then((res)=>{
+
+        //     });
     }
 
     componentDidMount(){
