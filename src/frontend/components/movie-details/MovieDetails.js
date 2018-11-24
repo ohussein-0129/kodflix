@@ -26,7 +26,7 @@ class MovieDetails extends Component{
         //     })
         //     .then((res)=>{
 
-        //     });
+        //     }); 
     }
 
     componentDidMount(){
