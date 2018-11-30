@@ -7,7 +7,7 @@ const tvShow = (props) => {
     return(
         <Link to={id_link} key='123456789'>
             <div className="column" >
-                <img className="movie" src={props.imagePath} alt="movie1"/>
+                <img className="movie" src={`/images/${props.id}`} alt="movie1"/>
                 <div className="title">{props.title}</div>
             </div>
         </Link>
