@@ -1,4 +1,5 @@
 import React from 'react';
+import from './NotFound.css';
 
 const notFound = (props)=> {
     return(

@@ -7,7 +7,6 @@ const port = process.env.PORT || 3001;
 
 //downloading movie data
 app.get('/rest/show', (req, res)=>{
-   console.log('rest api requested'); 
     res.type('json');
     res.end(JSON.stringify(tvShows.tvShows));
 });
