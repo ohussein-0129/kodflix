@@ -7,22 +7,6 @@ import NotFound from './components/not-found/NotFound';
 
 
 class App extends Component {
-  
-  componentDidMount(){
-    // fetch('/rest/show')
-    // .then((res)=> {
-    //   return res.json();
-    // })
-    // .then((myJson)=> {
-    //   console.log(myJson);
-    // });
-
-    // fetch('images/arrow')
-    //   .then((res)=> {
-    //     return res;
-    //   })
-
-  }
   render() {
     return (
       <Router>

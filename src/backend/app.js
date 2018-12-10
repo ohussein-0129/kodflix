@@ -3,7 +3,6 @@ const app = express();
 const fs = require("fs");
 const tvShows = require("./ShowsList");
 const path = require('path');
-const imageRes = require('./image/ResolveID');
 const port = process.env.PORT || 3001;
 
 //downloading movie data
@@ -13,13 +12,10 @@ app.get('/rest/show', (req, res)=>{
     res.end(JSON.stringify(tvShows.tvShows));
 });
 
-//downloading the images
-//app.use(express.static(path.join(__dirname, './image/covers')));
 app.get('/images/:id', function (req, res) {
     let imageExists = tvShows.tvShows.find((tvShow) => tvShow.id === req.params.id);
-
     if(!imageExists){
-        res.redirect('/not-found');
+        res.end('');
     }
     else{
         res.type('png');

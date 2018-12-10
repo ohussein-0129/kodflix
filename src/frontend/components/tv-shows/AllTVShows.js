@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TVShow from './TVShow';
+import './TVShow.css';
 
 class FullShows extends Component{
     constructor(){
@@ -26,7 +27,6 @@ class FullShows extends Component{
 
     render(){
         if(this.state.loaded && this.state.movieObj){
-            console.log('Loading it....');
             return(
                 <span className='tv-show-grid'>
                     <div className='row'>
@@ -40,7 +40,7 @@ class FullShows extends Component{
             );
         }
         else{
-            return (<div></div>);
+            return (<div>Loading</div>);
         }
     }
 }

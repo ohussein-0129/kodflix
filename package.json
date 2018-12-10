@@ -19,7 +19,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "start-backend": "nodemon ./src/backend/app",
-    "start-all" : "npm-run-all -p start start-backend"
+    "start-all" : "npm-run-all -p start-frontend start-backend"
   },
   "proxy": "http://localhost:3001"
 }
