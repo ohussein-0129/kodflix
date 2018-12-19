@@ -1,5 +1,4 @@
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 const dbName = 'kodflix';
 const url = 'mongodb://localhost:27017';
 
