@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TVShow from './TVShow';
+import LoadingSign from '../loading-signs/RoundedLoad';
 import './TVShow.css';
 
 class FullShows extends Component{
@@ -12,16 +13,18 @@ class FullShows extends Component{
     }
 
     componentDidMount(){
-        fetch('/rest/show')
-            .then((res) => {
-                return res.json();
-            })
-            .then((myJson) => {
+        fetch('rest/single/all')
+            .then((res) => res.json())
+            .then((obj) => {
                 this.setState({
                     loaded: true,
-                    movieObj: myJson
+                    movieObj: obj
                 });
             });
+
+        // fetch('rest/single/6')
+        //     .then((res) => res.json())
+        //     .then((mov) => console.log(mov));
     }
 
 
@@ -40,7 +43,7 @@ class FullShows extends Component{
             );
         }
         else{
-            return (<div>Loading</div>);
+            return (<LoadingSign/>);
         }
     }
 }

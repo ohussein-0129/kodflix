@@ -1,0 +1,21 @@
+.round-load{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.round-load .shape{
+    height: 100px;
+    width: 100px;
+    border: 10px solid pink;
+    border-top: 10px solid green;
+    border-bottom: 10px solid orange;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

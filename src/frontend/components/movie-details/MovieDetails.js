@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
+import LoadingSign from '../loading-signs/RoundedLoad';
 import './MovieDetails.css';
 
-class MovieDetails extends Component{
+class MovieDetails extends Component {
     constructor(){
         super();
         this.state = {
@@ -14,15 +15,13 @@ class MovieDetails extends Component{
     }
 
     componentDidMount() {
-        fetch('/rest/show')
-            .then((res)=> {
-                return res.json();
-            })
-            .then((resJson)=> {
-                let movieObj = this.findMovieObject(resJson, this.props.match.params.movie);
+        let id = this.props.location.pathname.toString().substring(1);
+        fetch(`rest/single/${id}`)
+            .then((res) => res.json())
+            .then((obj) => {
                 this.setState({
                     objLoaded: true,
-                    backendObject: movieObj,
+                    backendObject: obj
                 });
             });
     }
@@ -36,7 +35,7 @@ class MovieDetails extends Component{
                 <div className="movie-detail">
                     <div className='information'>
                         <h2>{ this.state.message }  { this.state.backendObject.name }</h2>
-                        { this.state.backendObject.information }
+                        { this.state.backendObject.synopsis }
                     </div>
                     <div className='cover'>
                         <img src={`/images/${this.state.backendObject.id}`} alt='' />
@@ -45,11 +44,7 @@ class MovieDetails extends Component{
             );
         }
         else{
-            return(
-            <div>
-                Loading
-            </div>
-        );
+            return(<LoadingSign/>);
         }
     }
 
