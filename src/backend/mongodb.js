@@ -25,7 +25,7 @@ module.exports.mongo = {
         return new Promise((resolve, reject) => {
             collection.find(qry).toArray((err, docs) => {
                 this.client.close();
-                if(err){
+                if(err || docs.length === 0){
                     reject(err, this.client);
                 }
                 else{
