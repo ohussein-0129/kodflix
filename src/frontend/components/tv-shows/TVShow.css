@@ -1,125 +1,32 @@
-.row a{
-  text-decoration: none;
+.home-gallery-cover{
+    flex: 1 1 300px;
+    overflow: hidden;
+    position: relative;
 }
 
-/*mobile devices*/
-@media screen and (max-width: 400px){
-    .row{
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .row a{
-      flex-basis: 100%;
-    }
-    .row .column{
-      height: 133vw;
-      overflow: hidden;
-    }
-    
-    .row .column .movie{
-      width: 100%;
-      height: 100%;
-    }
-    
-    .row .column .title{
-      position: relative;
-      color: aqua;
-      cursor: default;
-      font-size: 10vw;
-      opacity: 0.1;
-      background: black;
-      height: 50vw;
-      bottom: 0;
-    }
-  
-    .row .column:hover .title{
-      bottom: 26vw;
-      opacity: 0.8;
-      transition: bottom 1s, opactity 0.5s, tansform 1s;
-    }
-  }
+.home-gallery-cover-image{
+    width: 100%;
+    height: 100%;
+}
 
-  @media(max-height: 400px){
-    .row a{
-      height: 100vh;
-    }
-  }
+.home-gallery-cover-overlay{
+    transition: bottom 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    bottom: -120px;
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+    opacity: .9;
+}
 
-  @media(min-width: 401px){
-    .row{
-      display: flex;
-      flex-wrap: wrap;
-    }
+.home-gallery-cover:hover .home-gallery-cover-overlay{
+    bottom: 0;
+}
 
-    .row a{
-      flex-basis: 50%;
+@media(min-width: 1185px){
+    .home-gallery-cover{
+        flex: 1 1 33%;
     }
-
-    .row .column{     
-      height: 100%;
-      overflow: hidden;
-    }
-  
-    .row .column:hover .title{
-      bottom: 10.8vw;
-      opacity: 0.8;
-      transition: bottom 2s, opacity 2s, transform 2s;
-      font-size: 3vw;
-    }
-  
-    .row .column .title{
-      background: black;
-      position: relative;
-      bottom: 0;
-      height: 11vw;
-      opacity: 0.1;
-      color: white;
-      overflow: hidden;
-      cursor: default;
-    }
-    .row .column .movie {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  
-  /*Computer/Laptop*/
-  @media (min-width: 800px){
-    .row{
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-
-    .row a{
-      flex-basis: 33.3%;
-    }
-
-    .row .column{     
-      height: 100%;
-      overflow: hidden;
-    }
-  
-    .row .column:hover .title{
-      bottom: 10.8vw;
-      opacity: 0.8;
-      transition: bottom 2s, opacity 2s, transform 2s;
-      font-size: 3vw;
-    }
-  
-    .row .column .title{
-      background: black;
-      position: relative;
-      bottom: 0;
-      height: 11vw;
-      opacity: 0.1;
-      color: white;
-      overflow: hidden;
-      cursor: default;
-    }
-    .row .column .movie {
-      width: 100%;
-      height: 100%;
-    }
-  }
+}

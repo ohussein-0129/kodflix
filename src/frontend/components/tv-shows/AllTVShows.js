@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TVShow from './TVShow';
 import LoadingSign from '../loading-signs/RoundedLoad';
-import './TVShow.css';
+import './AllTVShows.css';
 
 class FullShows extends Component{
     constructor(){
@@ -21,25 +21,19 @@ class FullShows extends Component{
                     movieObj: obj
                 });
             });
-
-        // fetch('rest/single/6')
-        //     .then((res) => res.json())
-        //     .then((mov) => console.log(mov));
     }
 
 
     render(){
         if(this.state.loaded && this.state.movieObj){
             return(
-                <span className='tv-show-grid'>
-                    <div className='row'>
-                        {this.state.movieObj
-                            .map((tvShow)=>(
-                                <TVShow key={tvShow.id} id={tvShow.id}
-                                title={tvShow.name} imagePath={`/images/${tvShow.id}`}/>
-                            ))}
-                    </div>
-                </span>
+                <div className='home-gallery'>
+                    {this.state.movieObj
+                        .map((tvShow)=>(
+                            <TVShow key={tvShow.id} id={tvShow.id}
+                            title={tvShow.name} imagePath={`/images/${tvShow.id}`}/>
+                        ))}
+                </div>
             );
         }
         else{
