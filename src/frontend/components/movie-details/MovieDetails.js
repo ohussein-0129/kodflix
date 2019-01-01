@@ -10,24 +10,32 @@ class MovieDetails extends Component {
             objLoaded: false,
             message: 'Hello, this will be the '
                 +'details page for',
-            movieObject: null
+            movieObject: null,
+            error: false
         };
     }
 
     componentDidMount() {
         let id = this.props.location.pathname.toString().substring(1);
         fetch(`rest/single/${id}`)
-            .then((res) => res.json())
+            .then((res) =>{
+                return res.json();
+            })
             .then((obj) => {
                 this.setState({
                     objLoaded: true,
                     backendObject: obj
                 });
+            })
+            .catch((err) => {
+                this.setState({
+                    error: true
+                });
             });
     }
 
     render(){
-        if(this.state.objLoaded && !this.state.backendObject) {
+        if((this.state.objLoaded && !this.state.backendObject) || this.state.error) {
             return <Redirect to='/not-found'/>;
         }
         else if(this.state.objLoaded) {
