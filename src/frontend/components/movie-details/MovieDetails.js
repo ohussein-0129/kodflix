@@ -41,12 +41,16 @@ class MovieDetails extends Component {
         else if(this.state.objLoaded) {
             return(
                 <div className="movie-detail">
-                    <div className='information'>
-                        <h2>{ this.state.message }  { this.state.backendObject.name }</h2>
-                        { this.state.backendObject.synopsis }
+                    <div className='movie-detail-title'>
+                        <h2>{ this.state.backendObject.name }</h2>
                     </div>
-                    <div className='cover'>
-                        <img src={`/images/${this.state.backendObject.id}`} alt='' />
+                    <div className='movie-detail-information'>
+                        <div className='movie-detail-information-synopsis'>
+                            { this.state.backendObject.synopsis }
+                        </div>
+                        <div className='movie-detail-information-image'>
+                            <img src={`/images/${this.state.backendObject.id}`} alt={this.state.backendObject.id} />
+                        </div>
                     </div>
                 </div>
             );
