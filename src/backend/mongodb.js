@@ -1,14 +1,14 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
-const dbName = 'kodflix';
-const url = 'mongodb://localhost:27017';
+require('dotenv').config();
+const url = process.env.DB_URL_PRD;
 
 module.exports.mongo = {
     client: null,
     connectAndGetCollection: function(){
         return new Promise((resolve, reject) => {
             MongoClient.connect(url, (err, client) => {
-                let db = client.db(dbName);
+                let db = client.db(url.substring(url.lastIndexOf('ko')));
                 let collection = db.collection('shows');
                 this.client = client;
                 if(err) {
