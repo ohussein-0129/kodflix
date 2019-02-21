@@ -4,9 +4,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MovieDetails from './components/movie-details/MovieDetails';
 import AllTVShows from './components/tv-shows/AllTVShows';
 import NotFound from './components/not-found/NotFound';
+import ReactGA from 'react-ga';
 
 
 class App extends Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-133174350-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
+
   render() {
     return (
       <Router>
