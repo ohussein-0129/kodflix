@@ -28,7 +28,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "start-backend": "nodemon ./src/backend/app",
-    "start-all": "npm-run-all -p start-frontend start-backend"
+    "start-all": "npm-run-all -p start-frontend start-backend",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "proxy": "http://localhost:3001",
   "browserslist": [
@@ -36,5 +37,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "heroku-run-build-script": true
 }
