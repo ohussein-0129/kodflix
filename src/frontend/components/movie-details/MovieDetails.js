@@ -59,11 +59,5 @@ class MovieDetails extends Component {
             return(<LoadingSign/>);
         }
     }
-
-    findMovieObject(arrayOfMoveObjects, passedID){
-        return (arrayOfMoveObjects && arrayOfMoveObjects.find((movie)=>(
-            movie.id === passedID
-        ))) || false;
-    }
 }
 export default MovieDetails;
