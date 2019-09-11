@@ -1,0 +1,30 @@
+.menu-panel-content {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-panel-content > .manage-tvshows-option {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu-panel-content > .manage-tvshows-option:hover {
+    background-color: darkgrey;
+    cursor: pointer;
+    transition: background-color 0.8s;
+}
+
+.menu-panel-content > .manage-tvshows-option div {
+    line-height: 35px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+.menu-panel-content > .manage-tvshows-option img {
+    height: 80%;
+}
