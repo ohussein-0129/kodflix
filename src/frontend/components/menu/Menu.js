@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Menu.css';
-import MenuBarSVG from './MenuBarSVG';
 import MenuPanelContent from './menu-panel-content/MenuPanelContent';
 
 export default class Menu extends Component {
@@ -20,7 +19,9 @@ export default class Menu extends Component {
                     }));
                     this.props.menuPanelStateChangeRootHandler(!this.state.panelVisible);
                 }}>
-                    <MenuBarSVG panelVisible={this.state.panelVisible}/>
+                    <div className='menu-bar-line'></div>
+                    <div className='menu-bar-line'></div>
+                    <div className='menu-bar-line'></div>
                 </div>
                 <div className={classN}>
                     <MenuPanelContent />

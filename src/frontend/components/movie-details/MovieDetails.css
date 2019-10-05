@@ -1,3 +1,8 @@
+.movie-detail {
+    height: 100vh;
+    background-size: 100%;
+}
+
 .movie-detail-information{
     display: flex;
     flex-wrap: wrap;
@@ -23,4 +28,19 @@
     .movie-detail-information-synopsis{
         margin-top: 70px;
     }
+}
+
+.play-button {
+    display: inline-block;
+    border-top: 15vw solid transparent;
+    border-bottom: 15vw solid transparent;
+    border-left: 50vw solid black;
+    transition: border-width 500ms;
+}
+
+.play-button:hover {
+    /* border-width: 80vh 26vh; */
+    border-top-width: 18vw;
+    border-left-width: 60vw;
+    border-bottom-width: 18vw;
 }

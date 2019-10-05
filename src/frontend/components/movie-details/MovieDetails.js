@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import LoadingSign from '../loading-signs/RoundedLoad';
 import './MovieDetails.css';
 
@@ -11,7 +11,8 @@ class MovieDetails extends Component {
             message: 'Hello, this will be the '
                 +'details page for',
             movieObject: null,
-            error: false
+            error: false,
+            imageUrl: null
         };
     }
 
@@ -32,6 +33,12 @@ class MovieDetails extends Component {
                     error: true
                 });
             });
+        fetch(`/wallpaper/${id}`)
+            .then((res) => {
+                this.setState({
+                    imageUrl: res.url
+                })
+            })
     }
 
     render(){
@@ -40,7 +47,7 @@ class MovieDetails extends Component {
         }
         else if(this.state.objLoaded) {
             return(
-                <div className="movie-detail">
+                <div className="movie-detail" style={{backgroundImage: `url(${this.state.imageUrl})`}}>
                     <div className='movie-detail-title'>
                         <h2>{ this.state.backendObject.name }</h2>
                     </div>
@@ -48,10 +55,11 @@ class MovieDetails extends Component {
                         <div className='movie-detail-information-synopsis'>
                             { this.state.backendObject.synopsis }
                         </div>
-                        <div className='movie-detail-information-image'>
+                        {/* <div className='movie-detail-information-image'>
                             <img src={`/images/${this.state.backendObject.id}`} alt={this.state.backendObject.id} />
-                        </div>
+                        </div> */}
                     </div>
+                    <Link className='play-button' to={`/${this.state.backendObject.id}/play`}></Link>
                 </div>
             );
         }

@@ -6,6 +6,7 @@ import AllTVShows from './components/tv-shows/AllTVShows';
 import NotFound from './components/not-found/NotFound';
 import ReactGA from 'react-ga';
 import Menu from './components/menu/Menu';
+import Play from './components/play/Play';
 
 
 class App extends Component {
@@ -37,6 +38,7 @@ class App extends Component {
               <Switch>
                 <Route exact path='/'  component={AllTVShows}/>
                 <Route path='/not-found' component={NotFound}/>
+                <Route path='/:showId/play' component={Play} />
                 <Route path='/:movie' component={MovieDetails}/>
               </Switch>
         </div>

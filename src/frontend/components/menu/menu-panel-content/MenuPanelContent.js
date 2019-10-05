@@ -8,7 +8,7 @@ export default () => (
         {
             MenuList.map(option => (
                 <Link to={'/'} className='manage-tvshows-option'>
-                    <img src={option.icon} alt='television icon' />
+                    {/*<div className='manage-tvshows-option-image'>*/}<img src={option.icon} alt='television icon' />{/*</div>*/}
                     <div className='manage-tvshows-option-text'><h2>{option.name}</h2></div>
                 </Link>
             ))

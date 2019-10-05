@@ -8,72 +8,79 @@
 }
 
 .menu-bar {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
     top: 0;
-    left: 100%;
+    left: 0;
     background-color: #818181;
     z-index: 2;
-    padding: 10px 5px;
+    /* padding: 5px 2px; */
     border-radius: 50%;
-    height: 25px;
-    width: 35px;
+    padding: 12px 10px;
     transition: left 0.5s ease-in;
+    width: 35px;
 }
 
-.menu-bar .menu-image-svg {
-    height: 100%;
+.menu-bar-line {
+    height: 5px;
+    background-color: black;
+    margin: 2.5px 0;
+}
+
+.menu-bar-line:nth-child(1), .menu-bar-line:nth-child(3) {
+    transition: transform 500ms;
+}
+
+.menu-bar-open .menu-bar-line:nth-child(1),  .menu-bar-open .menu-bar-line:nth-child(3){
+    transition: transform 500ms 500ms;
+}
+
+.menu-bar-open .menu-bar-line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-bar-line:nth-child(2) {
     width: 100%;
+    transition: width 500ms 500ms;
 }
-
-.menu-bar:hover .menu-image-svg {
-    /* transition: transform */
-}
-
-.menu-image-svg rect {
-    transition-timing-function: ease-in-out;
-}
-.menu-image-svg rect:nth-child(3) {
-    transition: width 0.5s 1.4s;
-}
-
-.menu-image-svg rect:nth-child(2), .menu-image-svg rect:nth-child(4) {
-    transition: transform 0.5s 0.9s;
-}
-
-.menu-bar-open .menu-image-svg rect:nth-child(3) {
-    transition: width 0.5s 0.9s;
+.menu-bar-open .menu-bar-line:nth-child(2) {
     width: 0%;
+    transition: width 500ms;
 }
 
-.menu-bar-open .menu-image-svg rect:nth-child(2) {
-    transform-origin: 50% 0%;
-    transform: translate(0px, 40%) rotate(45deg);
-    transition: transform 0.5s 1.4s;
+.menu-bar-open .menu-bar-line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
-.menu-bar-open .menu-image-svg rect:nth-child(4) {
-    transform: translate(0px, -40%) rotate(-45deg);
-    transition: transform 0.5s 1.4s;
-    transform-origin: 50% 100%;
+@media(min-width: 800px) {
+    .menu-panel {
+        position: absolute;
+        height: 100%;
+        background-color: #3b3b3b;
+        transition: left 1s linear;
+        width: 40vw;
+    }   
+    .menu-panel-show {
+        left: 100%;
+    }
+    .menu-panel-hide {
+        left: -130%;
+    }
 }
 
-.menu-bar-open {
-    left: 185%;
-    transition-delay: 0.4s;
-}
-
-
-.menu-panel {
-    position: relative;
-    height: 100%;
-    background-color: #3b3b3b;
-    transition: left 1s linear;
-}
-
-.menu-panel-hide {
-    left: -130%;
-}
-
-.menu-panel-show {
-    left: 100%;
+@media(max-width: 799px) {
+    .menu-panel {
+        position: absolute;
+        height: 100%;
+        background-color: #3b3b3b;
+        transition: left 1s linear;
+        width: 100vw;
+    }   
+    .menu-panel-show {
+        left: 100%;
+    }
+    .menu-panel-hide {
+        left: -100vw;
+    }
 }

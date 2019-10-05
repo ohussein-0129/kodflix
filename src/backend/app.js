@@ -43,6 +43,10 @@ app.get('/images/:id', function (req, res) {
     })
 });
 
+app.get('/wallpaper/:id', (req, res) => {
+    res.sendFile(path.join(__dirname, './image/wallpaper', `${req.params.id}.jpg`));
+});
+
 //link to the index.html
 app.use(express.static(path.join(__dirname, '../../build')));
 app.get('*', function (req, res) {
