@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require('path');
 const port = process.env.PORT || 3001;
 const mongo = require('./mongodb').mongo;
+const multer = require('multer');
+const upload = multer();
 
 app.get('/rest/single/:id', (req, res) => {
     mongo.connectAndGetCollection()
@@ -41,6 +43,15 @@ app.get('/images/:id', function (req, res) {
     .catch((err) => {
         res.end('');
     })
+});
+
+app.post('/rest/tv-shows/add', upload.none(), (req, res) => {
+    console.log("body: " + JSON.stringify(req.body));
+    if(req.body) {
+        res.send(JSON.stringify({error: 'none'}))
+    } else {
+        res.send(JSON.stringify({error: 'There is no form data!'}))
+    }
 });
 
 app.get('/wallpaper/:id', (req, res) => {
